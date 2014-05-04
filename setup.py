@@ -9,24 +9,15 @@ except (IOError, ImportError):
 
 
 setup(
-    install_requires=[
-        "selenium>=2.41.0"
-    ],
-    entry_points={
-        "console_scripts": [
-            "polished = polished.main:main"
-        ]
-    },
-    name="polished",
+    name="django-pin-passcode",
     packages=find_packages(),
-    version="0.0.8",
+    version="0.0.1",
     author="Eric Carmichael",
     author_email="eric@ckcollab.com",
-    description="Generates screenshots of a website based on git history",
+    description="A simple django app that provides site-wide easy password authentication for 1 user",
     long_description=long_description,
     license="MIT",
-    keywords="link checker",
-    url="https://github.com/ckcollab/polished",
+    url="https://github.com/ckcollab/django-pin-passcode",
     classifiers=[
         'Intended Audience :: Developers',
         'Natural Language :: English',
