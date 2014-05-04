@@ -13,7 +13,12 @@ def auth(request):
     if request.method == 'POST':
         pin = request.POST.get('pin', None)
         if pin == settings.PIN_PASSCODE_PIN:
-            user = get_user_model().objects.get(username=settings.PIN_PASSCODE_USERNAME, 'admin')
+            username = settings.PIN_PASSCODE_USERNAME
+
+            if not username:
+                username = 'admin'
+
+            user = get_user_model().objects.get(username=username)
             user.backend = 'django.contrib.auth.backends.ModelBackend'
 
             login(request, user)
