@@ -1,0 +1,2 @@
+recursive-include pin_passcode/templates *
+recursive-include pin_passcode/static *

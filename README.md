@@ -1,6 +1,8 @@
 django-pin-password
 ===================
 
+![Django Pin Passcode Example](screenshot.png)
+
 This is a simple app that adds a site-wide pin-passcode for quick authentication. I wrote this originally for my personal
 motivation tracker called [chin up](https://github.com/ckcollab/chin-up) so I could quickly login from my phone.
 

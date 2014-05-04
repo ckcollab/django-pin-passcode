@@ -1,8 +1,6 @@
-from importlib import import_module
-
 from django.conf import settings
-from django.contrib.auth import authenticate, login, get_user_model
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.contrib.auth import login, get_user_model
+from django.shortcuts import render, HttpResponse
 
 
 def form(request):
