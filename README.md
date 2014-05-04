@@ -1,4 +1,4 @@
-django-pin-password
+django-pin-passcode
 ===================
 
 ![Django Pin Passcode Example](docs/screenshot.png)
