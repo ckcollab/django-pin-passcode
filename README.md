@@ -13,7 +13,7 @@ and forwarded either the index or the page you were trying to request.
 Installation
 ============
 
-### Django Settings
+### `settings.py`
 
 ```python
 INSTALLED_APPS += (
@@ -32,7 +32,7 @@ PIN_PASSCODE_USERNAME = 'eric' # user to sign in as, defaults to "admin"
 PIN_PASSCODE_PIN = 1234        # the passcode required to login as the above user, using 0-9 and #
 ```
 
-### Add to `urls.py`
+### `urls.py`
 
 ```python
 url(r'^admin/', include(admin.site.urls)),
