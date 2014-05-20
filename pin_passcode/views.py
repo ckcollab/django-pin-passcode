@@ -16,10 +16,14 @@ def auth(request):
             if not username:
                 username = 'admin'
 
-            user = get_user_model().objects.get(username=username)
-            user.backend = 'django.contrib.auth.backends.ModelBackend'
+            try:
+                user = get_user_model().objects.get(username=username)
+                user.backend = 'django.contrib.auth.backends.ModelBackend'
 
-            login(request, user)
-            return HttpResponse(status=200)
+                login(request, user)
+                return HttpResponse(status=200)
+            except get_user_model().DoesNotExist:
+                pass
+
 
     return HttpResponse(status=401)
