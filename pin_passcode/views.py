@@ -1,9 +1,13 @@
 from django.conf import settings
 from django.contrib.auth import login, get_user_model
 from django.shortcuts import render, HttpResponse
+from django.views.decorators.csrf import requires_csrf_token
+from django.middleware.csrf import get_token
 
 
+@requires_csrf_token
 def form(request):
+    get_token(request)
     return render(request, 'pin_passcode/form.html')
 
 
