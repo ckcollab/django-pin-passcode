@@ -35,5 +35,9 @@ PIN_PASSCODE_PIN = 1234        # the passcode required to login as the above use
 ### urls.py
 
 ```python
-url(r'^admin/', include(admin.site.urls)),
+urlpatterns = patterns(
+    ...
+    url(r'^', include('pin_passcode.urls')),
+    ...
+)
 ```
