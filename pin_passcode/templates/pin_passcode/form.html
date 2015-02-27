@@ -9,43 +9,48 @@
     <style>
         body {
             text-align: center;
+            background-color: #3a3a3a;
+            color: #efefef;
+        }
+        .header {
+            margin-bottom: 20px;
         }
         .btn {
-            width: 100px;
-            margin: 5px 0;
-        }
-        .numpad {
-            padding: 20px 0;
+            width: 30%;
+            margin: 10px 10px;
+            padding: 30px 0;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
+    <div class="row header">
+        <div class="col-lg-12">
+            <h1 id="current_pin">Please enter the PIN code</h1>
+        </div>
+    </div>
+
     <div class="row">
         <div class="col-lg-12">
-            <h1 id="current_pin">Current Pin: <i>none</i></h1>
-
-            <div class="numpad">
-                <button class="btn btn-lg pin_input">1</button>
-                <button class="btn btn-lg pin_input">2</button>
-                <button class="btn btn-lg pin_input">3</button>
-                <br>
-
-                <button class="btn btn-lg pin_input">4</button>
-                <button class="btn btn-lg pin_input">5</button>
-                <button class="btn btn-lg pin_input">6</button>
-                <br>
-
-                <button class="btn btn-lg pin_input">7</button>
-                <button class="btn btn-lg pin_input">8</button>
-                <button class="btn btn-lg pin_input">9</button>
-                <br>
-
-                <button class="btn btn-lg pin_input">#</button>
-                <button class="btn btn-lg pin_input">0</button>
-                <button class="btn btn-lg btn-danger reset">RESET</button>
-            </div>
+            <button class="btn btn-lg btn-info pin_input">1</button>
+            <button class="btn btn-lg btn-info pin_input">2</button>
+            <button class="btn btn-lg btn-info pin_input">3</button>
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-lg btn-info pin_input">4</button>
+            <button class="btn btn-lg btn-info pin_input">5</button>
+            <button class="btn btn-lg btn-info pin_input">6</button>
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-lg btn-info pin_input">7</button>
+            <button class="btn btn-lg btn-info pin_input">8</button>
+            <button class="btn btn-lg btn-info pin_input">9</button>
+        </div>
+        <div class="col-lg-12">
+            <button class="btn btn-lg btn-info pin_input">#</button>
+            <button class="btn btn-lg btn-info pin_input">0</button>
+            <button class="btn btn-lg btn-danger reset">RESET</button>
         </div>
     </div>
 </div>
