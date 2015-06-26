@@ -91,10 +91,10 @@ class PinPasscodeMiddlewareTests(TestCase):
         request.user = AnonymousUser()
         request.session = {}
         response = self.middleware.process_request(request)
-        assert response is None  # Lets us use this page
+        assert response is None  # Lets us use this page to input pin
 
         request = self.factory.get(reverse('pin_auth'))
         request.user = AnonymousUser()
         request.session = {}
         response = self.middleware.process_request(request)
-        assert response is None  # Lets us use this page
+        assert response is None  # Lets us use this page to auth pin
