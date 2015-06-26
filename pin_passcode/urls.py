@@ -5,4 +5,5 @@ urlpatterns = patterns(
     '',
     url(r'pin/$', 'pin_passcode.views.form', name='pin_form'),
     url(r'pin/auth$', 'pin_passcode.views.auth', name='pin_auth'),
+    url(r'pin/test$', 'pin_passcode.views.test', name='pin_test'),
 )
