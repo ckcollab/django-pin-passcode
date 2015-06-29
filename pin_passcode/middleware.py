@@ -12,6 +12,7 @@ class PinPasscodeMiddleware:
             allowed_urls.append(reverse('admin:index'))
         except NoReverseMatch:
             pass
+
         if request.path not in allowed_urls:
             pin_passcode_logged_in = request.session.get("pin_passcode_logged_in", None)
             if not request.user.is_authenticated() and not pin_passcode_logged_in:

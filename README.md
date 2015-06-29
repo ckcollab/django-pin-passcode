@@ -28,8 +28,9 @@ MIDDLEWARE_CLASSES += (
 ```
 
 ```python
-PIN_PASSCODE_USERNAME = 'eric' # user to sign in as, defaults to "admin"
-PIN_PASSCODE_PIN = 1234        # the passcode required to login as the above user, using 0-9 and #
+# user to sign in as, leave blank to use a session variable instead
+#PIN_PASSCODE_USERNAME = 'eric' # uncomment this to login as "eric" after valid pin code is entered 
+PIN_PASSCODE_PIN = 1234        # the passcode required to login as the above user, using 0-9 and '#'
 ```
 
 ### urls.py
