@@ -1,4 +1,4 @@
-django-pin-passcode
+django-pin-passcode [![Circle CI](https://circleci.com/gh/ckcollab/django-pin-passcode.svg?style=svg)](https://circleci.com/gh/ckcollab/django-pin-passcode)
 ===================
 
 <p align="center"><img src="https://github.com/ckcollab/django-pin-passcode/raw/master/docs/screenshot.png" alt="Django Pin Passcode Example"></p>
