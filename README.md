@@ -6,10 +6,11 @@ django-pin-passcode [![Circle CI](https://circleci.com/gh/ckcollab/django-pin-pa
 This is a simple app that adds a site wide pin-passcode for quick authentication. I wrote this originally for my personal
 motivation tracker [chin up](https://github.com/ckcollab/chin-up) so I could quickly login from my phone.
 
-You enter a PIN passcode (using 0-9 and #) and when you have entered the correct pin you will:
+You enter a PIN passcode (using 0-9 and #) until the correct pin is entered, then:
  
-1) If `PIN_PASSCODE_USERNAME` is set, you will be logged in as this user
-2) Otherwise, a session variable will be set and you will be able to browse the site
+ * If `PIN_PASSCODE_USERNAME` is set, you will be logged in as this user
+
+ * Otherwise, a session variable will be set and you will be able to browse the site
 
 
 
