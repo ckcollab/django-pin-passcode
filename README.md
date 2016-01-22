@@ -17,29 +17,35 @@ You enter a PIN passcode (using 0-9 and #) until the correct pin is entered, the
 Installation
 ============
 
-### settings.py
+```bash
+pip install django-pin-passcode
+```
+
 
 ```python
+# settings.py
+
 INSTALLED_APPS += (
     'pin_passcode',
 )
-```
 
-```python
+...
+
 MIDDLEWARE_CLASSES += (
     'pin_passcode.middleware.PinPasscodeMiddleware',
 )
-```
 
-```python
+...
+
 # user to sign in as, leave blank to use a session variable instead
 #PIN_PASSCODE_USERNAME = 'eric' # uncomment this to login as "eric" after valid pin code is entered 
 PIN_PASSCODE_PIN = 1234        # the passcode required to login as the above user, using 0-9 and '#'
 ```
 
-### urls.py
 
 ```python
+# urls.py
+
 urlpatterns = patterns(
     ...
     url(r'^', include('pin_passcode.urls')),
