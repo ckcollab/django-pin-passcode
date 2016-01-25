@@ -1,9 +1,9 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import url
+from . import views
 
 
-urlpatterns = patterns(
-    '',
-    url(r'pin/$', 'pin_passcode.views.form', name='pin_form'),
-    url(r'pin/auth$', 'pin_passcode.views.auth', name='pin_auth'),
-    url(r'pin/test$', 'pin_passcode.views.test', name='pin_test'),
+urlpatterns = (
+    url(r'pin/$', views.form, name='pin_form'),
+    url(r'pin/auth$', views.auth, name='pin_auth'),
+    url(r'pin/test$', views.test, name='pin_test'),
 )
