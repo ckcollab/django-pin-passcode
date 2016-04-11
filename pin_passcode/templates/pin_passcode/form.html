@@ -58,6 +58,7 @@
 <script type="text/javascript" src="{% static "js/jquery.js" %}"></script>
 <script type="text/javascript">
     var current_pin = '';
+    var the_pin = '';
 
     var reset_pin = function() {
         current_pin = '';
@@ -85,6 +86,8 @@
                     url += params["next"];
                 }
 
+                $('#current_pin').html("Current Pin: " + the_pin);
+
                 window.location = url;
             })
             .error(function(){
@@ -93,6 +96,11 @@
     };
 
     $(document).ready(function() {
+        $(document).keypress(function(e){
+            var key_number = String.fromCharCode(e.which)
+            append_to_pin(key_number);
+        });
+
         $('.pin_input').click(function() {
             append_to_pin(this.innerHTML);
         });
@@ -100,7 +108,9 @@
         $('.reset').click(reset_pin);
     });
 
-    // Get URL param
+    /* -----------------------------------------------------------------------
+    Get URL params
+     -----------------------------------------------------------------------*/
     function getQueryParams(qs) {
         qs = qs.split("+").join(" ");
 
@@ -115,7 +125,9 @@
         return params;
     }
 
-    // setup CSRF stuff
+    /* -----------------------------------------------------------------------
+    CSRF token helpers
+     -----------------------------------------------------------------------*/
     function getCookie(name) {
         var cookieValue = null;
         if (document.cookie && document.cookie != '') {
