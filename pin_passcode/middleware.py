@@ -6,8 +6,15 @@ from django.http import HttpResponseRedirect
 class PinPasscodeMiddleware:
     def process_request(self, request):
         # First check if we're on a whitelisted IP in which case we can ignore all of this
-        if settings.PIN_PASSCODE_IP_WHITELIST:
-            ip = request.META['REMOTE_ADDR']
+        if hasattr(settings, 'PIN_PASSCODE_IP_WHITELIST'):
+            if 'HTTP_X_FORWARDED_FOR' in request.META:
+                # Get heroku IPs specially (behind routers and stuff, this special field
+                # passes client IPs)
+                ip_adds = request.META['HTTP_X_FORWARDED_FOR'].split(",")
+                ip = ip_adds[0]
+            else:
+                # Get regular IPs
+                ip = request.META['REMOTE_ADDR']
             if ip in settings.PIN_PASSCODE_IP_WHITELIST:
                 return
 

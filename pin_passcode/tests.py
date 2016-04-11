@@ -98,3 +98,19 @@ class PinPasscodeMiddlewareTests(TestCase):
         request.session = {}
         response = self.middleware.process_request(request)
         assert response is None  # Lets us use this page to auth pin
+
+    def test_pin_passcode_allows_certain_ips(self):
+        # This should work, our local ip
+        with self.settings(PIN_PASSCODE_IP_WHITELIST=('127.0.0.1',)):
+            request = self.factory.get('/')
+            request.user = AnonymousUser()
+            request.session = {}
+            response = self.middleware.process_request(request)
+            assert response is None
+
+        # Remove IP whitelist, shouldn't work any more
+        request = self.factory.get('/')
+        request.user = AnonymousUser()
+        request.session = {}
+        response = self.middleware.process_request(request)
+        assert response.status_code == 302
