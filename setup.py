@@ -12,7 +12,7 @@ setup(
     name="django-pin-passcode",
     packages=find_packages(),
     include_package_data=True, # declarations in MANIFEST.in
-    version="0.1.7",
+    version="0.1.8",
     author="Eric Carmichael",
     author_email="eric@ckcollab.com",
     description="A simple django app that provides site-wide easy password authentication for 1 user",
@@ -28,6 +28,7 @@ setup(
         'Programming Language :: Python :: 2',
         'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.5',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )
