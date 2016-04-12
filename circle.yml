@@ -2,6 +2,10 @@ machine:
   python:
     version: 2.7.5
 
+dependencies:
+  pre:
+    - pip install --upgrade pip
+
 test:
   override:
     - py.test pin_passcode/
