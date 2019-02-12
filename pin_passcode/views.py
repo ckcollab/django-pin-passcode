@@ -37,6 +37,7 @@ def auth(request):
         else:
             return HttpResponse(status=401)
 
+
 def test(request):
     '''This view is just for testing, you shouldn't be able to get to it unless
     you are authed from django or PIN PASSCODE'''

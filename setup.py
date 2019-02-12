@@ -11,7 +11,7 @@ except (IOError, ImportError):
 setup(
     name="django-pin-passcode",
     packages=find_packages(),
-    include_package_data=True, # declarations in MANIFEST.in
+    include_package_data=True,  # declarations in MANIFEST.in
     version="0.3.0",
     author="Eric Carmichael",
     author_email="eric@ckcollab.com",

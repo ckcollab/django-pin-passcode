@@ -1,3 +1,4 @@
+# flake8: ignore=F402
 import django
 
 from django.conf import settings

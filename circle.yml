@@ -1,11 +1,17 @@
-machine:
-  python:
-    version: 2.7.5
+version: 2
 
-dependencies:
-  pre:
-    - pip install --upgrade pip
+jobs:
+  test:
+    docker:
+      - image: circleci/python:3.6-jessie-browsers
+    steps:
+      - checkout
+      - run: sudo pip install -r requirements.txt
+      - run: py.test
+      - run: flake8 --ignore E501
 
-test:
-  override:
-    - py.test pin_passcode/
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - test
