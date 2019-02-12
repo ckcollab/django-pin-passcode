@@ -65,3 +65,16 @@ Testing
 `pip install -r requirements.txt`
 
 `py.test`
+
+
+
+Release notes
+=============
+
+### 0.3.0
+
+* Switched to Python 3 and added support for Django >= 2.1
+
+### 0.2.0
+
+* Added `MiddlewareMixin` for > Django 1.10 compatibility

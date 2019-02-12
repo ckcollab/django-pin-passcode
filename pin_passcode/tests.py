@@ -1,10 +1,11 @@
 import django
 
 from django.conf import settings
-from django.core.urlresolvers import reverse
 from django.test import TestCase, RequestFactory
 
 # Have to do settings here before importing models
+from django.urls import reverse
+
 settings.configure(
     DEBUG=True,
     DATABASES={
@@ -45,7 +46,7 @@ class PinPasscodeMiddlewareTests(TestCase):
         request.session = {}
         response = self.middleware.process_request(request)
         assert response.status_code == 302
-        assert response.url == "/pin/?next=/pin/test"
+        assert response.url == "/pin?next=/pin/test"
 
     def test_pin_passcode_incorrect_pin_returns_401_response(self):
         request = self.factory.post(

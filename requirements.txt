@@ -1,4 +1,4 @@
-django
-pytest==2.7.2
-pytest_django==2.8.0
-ipdb
+django==2.1.7
+pytest==4.2.0
+pytest_django==3.4.7
+ipdb==0.11
