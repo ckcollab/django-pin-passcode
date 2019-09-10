@@ -2,7 +2,7 @@
 import django
 
 from django.conf import settings
-from django.test import TestCase, RequestFactory
+from django.test import TestCase, RequestFactory, override_settings
 
 # Have to do settings here before importing models
 from django.urls import reverse
@@ -40,6 +40,14 @@ class PinPasscodeMiddlewareTests(TestCase):
             username='test', email='test@test.com', password='password'
         )
         self.middleware = PinPasscodeMiddleware()
+
+    @override_settings(PIN_PASSCODE_PIN=None)
+    def test_pin_passcode_empty_does_not_block_access(self):
+        request = self.factory.get(reverse("pin_test"))
+        request.user = AnonymousUser()
+        request.session = {}
+        response = self.middleware.process_request(request)
+        assert response is None  # No redirect response sent
 
     def test_pin_passcode_wrong_does_not_redirect(self):
         request = self.factory.get(reverse("pin_test"))

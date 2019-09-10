@@ -6,6 +6,10 @@ from django.utils.deprecation import MiddlewareMixin
 
 class PinPasscodeMiddleware(MiddlewareMixin):
     def process_request(self, request):
+        actual_pin_code = getattr(settings, 'PIN_PASSCODE_PIN', None)
+        if not actual_pin_code:
+            return  # no need to do any checks, pin passcode not enabled!
+
         # First check if we're on a whitelisted IP in which case we can ignore all of this
         if hasattr(settings, 'PIN_PASSCODE_IP_WHITELIST'):
             if 'HTTP_X_FORWARDED_FOR' in request.META:

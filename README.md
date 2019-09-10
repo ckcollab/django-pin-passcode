@@ -40,7 +40,8 @@ MIDDLEWARE_CLASSES += (
 # user to sign in as, omit this option to use a session variable instead
 # PIN_PASSCODE_USERNAME = 'eric' # uncomment this to login as "eric" after valid pin code is entered
 
-# the passcode required to login as the above user, using 0-9 and '#' 
+# the passcode required to login as the above user, using 0-9 and '#'
+# If no PIN is set, pin passcode will allow anyone to access the site 
 PIN_PASSCODE_PIN = 1234
         
 # IP addresses to give access to automatically
@@ -70,6 +71,10 @@ Testing
 
 Release notes
 =============
+
+### 0.3.1
+
+* Empty `PIN_PASSCODE_PIN` disables pin passcode
 
 ### 0.3.0
 
