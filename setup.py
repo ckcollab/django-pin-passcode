@@ -1,12 +1,8 @@
 from setuptools import setup, find_packages
 
 
-try:
-    with open('README.md') as readme:
-        long_description = readme.read()
-except (IOError, ImportError):
-    long_description = ''
-
+with open('README.md') as readme:
+    long_description = readme.read()
 
 setup(
     name="django-pin-passcode",
@@ -17,6 +13,7 @@ setup(
     author_email="eric@ckcollab.com",
     description="A simple django app that provides site-wide easy password authentication for 1 user",
     long_description=long_description,
+    long_description_content_type="text/markdown",
     license="MIT",
     url="https://github.com/ckcollab/django-pin-passcode",
     classifiers=[
